@@ -1,0 +1,12 @@
+UC-1
+
+CREATE DATABASE
+create database payroll_service;
+
+SEE IF THE DATABASE IS CREATED
+show databases;
+
+GO TO THE CREATED DATABASE
+use payroll_service;
+
+
