@@ -69,3 +69,26 @@ select id, name, max(salary) from employee_payroll group by gender;
 COUNT OF EMPLOYEES BASED ON GENDER
 select gender, count(*) from employee_payroll group by gender;
 
+
+UC-8
+
+ADD COLUMNS EMPLOYEE_PHONE, ADDRESS AND DEPARTMENT
+alter table employee_payroll add phone bigint unsigned;
+
+alter table employee_payroll add address varchar(500);
+
+alter table employee_payroll add department varchar(200) not null;
+
+
+UC-9
+
+ADD COLUMN BASIC_PAY, DEDUCTIONS, TAXABLE_PAY, INCOME_TAX, NET_PAY
+alter table employee_payroll add basic_pay int unsigned;
+
+alter table employee_peyroll add deductions int unsigned;
+
+alter table employee_payroll add taxable_pay int unsigned;
+
+alter table employee_payroll add income_tax int unsigned;
+
+alter table employee_payroll add net_pay int unsigned;
