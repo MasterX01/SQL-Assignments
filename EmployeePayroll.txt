@@ -10,3 +10,62 @@ GO TO THE CREATED DATABASE
 use payroll_service;
 
 
+UC-2
+
+CREATE TABLE
+create table employee_payroll (
+id	int unsigned not null auto_increment,
+name	varchar(150) not null,
+salary	double not null,
+start	date not null
+);
+
+
+UC-3
+
+INSERT DATA TO TABLE
+insert into employee_payroll (name, salary, start) values('Akash', 2100000.0, '2018-04-21');
+
+
+UC-4
+
+RETRIEVE ALL DATA FROM EMPLOYEE PAYROLL
+select * from employee_payroll;
+
+
+UC-5
+
+RETRIEVE SALARY FOR A EMPLOYEE NAME
+select salary from employee_payroll where name='Bill';
+
+RETRIEVE EMPLOYEE DATA FOR A DATE RANGE
+select * from employee_payroll where start between cast('2019-01-01'as date) and date(now());
+
+
+UC-6
+
+ADD NEW COLUMN GENDER TO EMPLOYEE PAYROLL
+alter table employee_payroll add gender char(1) after name;
+
+SET GENDER TO REFLECT DATA IN EACH ROW
+update employee_payroll set gender='M' where name='Akash';
+update employee_payroll set gender='F' where name='Mansi';
+
+
+UC-7
+
+SUM OF SALARY BASED ON GENDER
+select gender, sum(salary) from employee_payroll group by gender;
+
+AVERAGE OF SALARY BASED ON GENDER
+select gender, avg(salary) from employee_payroll group by gender;
+
+MINIMUM SALARY BASED ON GENDER
+select id, name , min(salary) from employee_payroll group by gender;
+
+MAXIMUM SALARY BASED ON GENDER
+select id, name, max(salary) from employee_payroll group by gender;
+
+COUNT OF EMPLOYEES BASED ON GENDER
+select gender, count(*) from employee_payroll group by gender;
+
